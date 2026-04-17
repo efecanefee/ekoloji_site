@@ -35,11 +35,12 @@ const greenPalette = ['#00e676', '#34e89e', '#69f0ae', '#b9f6ca', '#e8f5e9', '#0
 const ctxPie1 = document.getElementById('chart-pie-1').getContext('2d');
 new Chart(ctxPie1, {
     type: 'pie',
+    plugins: [ChartDataLabels],
     data: {
         labels: ['Karbon', 'Tarım', 'Orman', 'Otlak', 'Balıkçılık', 'Yapılı Alan'],
         datasets: [{
             data: [60, 11, 9, 7, 7, 6],
-            backgroundColor: ['#00e676', '#34e89e', '#69f0ae', '#00acc1', '#00838f', '#26a69a'],
+            backgroundColor: ['#ff6b6b', '#feca57', '#1dd1a1', '#48dbfb', '#5f27cd', '#ff9ff3'],
             borderWidth: 0,
             hoverOffset: 10
         }]
@@ -49,6 +50,16 @@ new Chart(ctxPie1, {
         maintainAspectRatio: false,
         plugins: {
             legend: { position: 'bottom', labels: { color: '#e8f5e9' } },
+            datalabels: {
+                color: '#fff',
+                font: {
+                    weight: 'bold',
+                    size: 14
+                },
+                formatter: (value, ctx) => {
+                    return '%' + value;
+                }
+            },
             tooltip: {
                 callbacks: {
                     label: function(context) {
@@ -118,14 +129,15 @@ new Chart(ctxBar2, {
 const ctxDoughnut3 = document.getElementById('chart-doughnut-3').getContext('2d');
 new Chart(ctxDoughnut3, {
     type: 'doughnut',
+    plugins: [ChartDataLabels],
     data: {
         labels: ['Hidrolik', 'Güneş', 'Doğalgaz', 'Kömür', 'Rüzgar', 'Jeotermal', 'Diğer'],
         datasets: [{
             data: [26.6, 20.2, 19.8, 18.1, 11.8, 1.4, 2.1],
-            backgroundColor: ['#00e676', '#a5d6a7', '#ffab40', '#ff5252', '#4db6ac', '#81c784', '#90a4ae'],
+            backgroundColor: ['#1dd1a1', '#feca57', '#ff9f43', '#ff6b6b', '#48dbfb', '#ff9ff3', '#c8d6e5'],
             borderWidth: 0,
             hoverOffset: 10,
-            cutout: '70%'
+            cutout: '65%'
         }]
     },
     options: {
@@ -133,6 +145,17 @@ new Chart(ctxDoughnut3, {
         maintainAspectRatio: false,
         plugins: {
             legend: { position: 'bottom', labels: { color: '#e8f5e9' } },
+            datalabels: {
+                color: '#fff',
+                font: {
+                    weight: 'bold',
+                    size: 13
+                },
+                formatter: (value, ctx) => {
+                    if(value < 3) return ''; // Hide small labels to prevent overlap
+                    return '%' + value;
+                }
+            },
             tooltip: {
                 callbacks: {
                     label: function(context) {
@@ -183,32 +206,57 @@ new Chart(ctxLine4, {
 });
 
 // ============================================
-// Grafik 5: Gizli Etki: Arazi Kullanımı (H-Bar)
+// Grafik 5: Gizli Etki: Arazi Kullanımı (Bar)
 // ============================================
+// Düzeltilmiş grafik: Daha anlaşılır olması için dikey ve sıraya dizilmiş.
+// Aynı zamanda sayısal değerleri net bir şekilde üzerinde yazıyoruz.
 const ctxHBar5 = document.getElementById('chart-hbar-5').getContext('2d');
 new Chart(ctxHBar5, {
     type: 'bar',
+    plugins: [ChartDataLabels],
     data: {
-        labels: ['Kömür Madeni', 'Hidroelektrik', 'Güneş (Zemin)', 'Rüzgar (Arazi)', 'Doğalgaz'],
+        labels: ['Rüzgar (Arazi)*', 'Kömür Madeni', 'Hidroelektrik', 'Güneş (Zemin)', 'Doğalgaz'],
         datasets: [{
-            label: 'm²/MWh',
-            data: [23, 14, 12, 72, 0.5],
-            backgroundColor: ['#ff5252', '#00e676', '#34e89e', '#69f0ae', '#ffab40'],
+            label: 'Arazi Kullanımı (m²/MWh)',
+            data: [72, 23, 14, 12, 0.5],
+            backgroundColor: ['#48dbfb', '#ff6b6b', '#1dd1a1', '#feca57', '#ff9f43'],
             borderRadius: 6
         }]
     },
     options: {
-        indexAxis: 'y', // making it horizontal
         responsive: true,
         maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: {
-            x: {
-                beginAtZero: true,
-                grid: { color: 'rgba(255,255,255,0.05)' },
-                title: { display: true, text: 'm² Arazi Kullanımı / MWh', color: '#a3b8ad' }
+        plugins: { 
+            legend: { display: false },
+            datalabels: {
+                color: '#fff',
+                anchor: 'end',
+                align: 'top',
+                font: {
+                    weight: 'bold',
+                    size: 13
+                },
+                formatter: (value) => {
+                    return value + ' m²';
+                }
             },
+            tooltip: {
+                callbacks: {
+                    title: function() { return ''; },
+                    label: function(context) {
+                        return ' ' + context.label + ': ' + context.raw + ' m²/MWh';
+                    }
+                }
+            }
+        },
+        scales: {
             y: {
+                beginAtZero: true,
+                suggestedMax: 80,
+                grid: { color: 'rgba(255,255,255,0.05)' },
+                title: { display: true, text: 'm² Arazi / MWh', color: '#a3b8ad' }
+            },
+            x: {
                 grid: { display: false }
             }
         }
