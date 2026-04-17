@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yenilenebilir Enerji Sistemlerinin Ekolojik Ayak İzi</title>
+    <meta name="description" content="Yenilenebilir enerjinin yaşam döngüsü emisyonları, ekolojik maliyetleri ve güncel verileri.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero" id="hero">
+        <div class="hero-background" style="background-image: url('assets/hero_solar.png');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="fade-up-hero">Yenilenebilir Enerji Sistemlerinin <br><span class="highlight">Ekolojik Ayak İzi</span></h1>
+            <p class="fade-up-hero delay-1">Enerji dönüşümünün görünmeyen gerçeklerini, ekolojik maliyetlerini ve sürdürülebilirlik hedeflerimizi derinlemesine keşfedin.</p>
+            <a href="#section-1" class="btn-discover fade-up-hero delay-2">Keşfet</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- BÖLÜM 1 -->
+        <section id="section-1" class="section glass-card section-observer">
+            <div class="section-grid">
+                <div class="section-content slide-in-left">
+                    <h2>Ekolojik Ayak İzi Nedir?</h2>
+                    <p>Ekolojik ayak izi, bir bireyin, toplumun ya da bir ülkenin doğal kaynaklara olan talebini ölçen bir göstergedir. Bunu somutlaştırmak gerekirse: insanlığın tüm ihtiyaçlarını karşılamak için ne kadar biyolojik olarak üretken arazi ve su alanına ihtiyaç duyulduğunu hesaplar.</p>
+                    <p>Bugün insanlık, Dünya'nın yenileyebileceğinden <strong>%75 daha fazla</strong> kaynak tüketmektedir; bu da Dünya'nın 1.75 gezegenine eşdeğerdir. Enerji tüketimi bu tablonun en büyük bileşenini oluşturmaktadır: karbon ayak izi, yani fosil yakıt kaynaklı CO₂ emisyonları, küresel ekolojik ayak izinin yaklaşık %60'ını tek başına oluşturmaktadır.</p>
+                    <div class="chart-wrapper">
+                        <canvas id="chart-pie-1"></canvas>
+                    </div>
+                </div>
+                <div class="section-media zoom-in delay-2">
+                    <img src="assets/eco_globe.png" alt="Doğa ve Dünya Kompozisyonu">
+                </div>
+            </div>
+        </section>
+
+        <!-- BÖLÜM 2 -->
+        <section id="section-2" class="section glass-card section-observer">
+            <div class="section-grid reverse">
+                <div class="section-content slide-in-right">
+                    <h2>Yenilenebilir Enerjinin Yaşam Döngüsü Ayak İzi</h2>
+                    <p>Yenilenebilir enerji sistemleri "sıfır emisyon" olarak bilinse de bu tam olarak doğru değildir. Bir güneş paneli ya da rüzgar türbini üretilirken, taşınırken ve kurulurken hammadde çıkarımı, fabrika üretimi ve nakliye süreçlerinde CO₂ salınımı gerçekleşir. Buna "yaşam döngüsü emisyonu" denir.</p>
+                    <p>Fotovoltaik sistemlerin yaşam döngüsü CO₂ emisyonları kWh başına 28-100 gram arasında değişirken, rüzgar türbinleri 7-38 gram gibi çok daha düşük bir aralıkta kalır. Buna karşın kömür yakıtlı santrallerde bu değer kWh başına 820 grama kadar çıkabilmektedir. Yani en kötü güneş paneli bile, en iyi kömür santralinden en az 8 kat daha temizdir. IPCC verilerine göre çatı tipi güneş enerjisinin karbon ayak izi, doğal gazın yaklaşık 12 katı, kömürün ise 20 katı daha azdır.</p>
+                    <div class="chart-wrapper wide-chart">
+                        <canvas id="chart-bar-2"></canvas>
+                    </div>
+                </div>
+                <div class="section-media zoom-in delay-2">
+                    <img src="assets/solar_factory.png" alt="Güneş Paneli Fabrikası">
+                </div>
+            </div>
+        </section>
+
+        <!-- BÖLÜM 3 -->
+        <section id="section-3" class="section glass-card section-observer">
+            <div class="section-content full-width fade-up">
+                <h2 class="center-title">Türkiye'nin Durumu (2025-2026)</h2>
+                <div class="intro-text">
+                    <p>Türkiye yenilenebilir enerji alanında son yıllarda rekor büyüme yaşamaktadır. Uluslararası enerji düşünce kuruluşu Ember'in "Türkiye Elektrik Görünümü 2026" raporuna göre rüzgar ve güneş enerjisinin toplam elektrik içindeki payı ilk kez %22'ye ulaşarak Orta Doğu, Kafkasya ve Orta Asya'daki 16 ülke arasında bu eşiği aşan tek ülke konumuna geldi.</p>
+                    <p>Türkiye Enerji Bakanlığı verilerine göre Ekim 2025 sonu itibarıyla kurulu güç 121.412 MW'a ulaşmış; kapasite hidrolik, doğalgaz, kömür, rüzgar ve güneş olarak çeşitlendirilmiştir. Türkiye, 2035 yılına kadar toplam kurulu gücünde yenilenebilir enerjinin payını %65'e çıkarmayı hedeflemekte ve 10 milyar dolarlık şebeke yatırımı planlamaktadır.</p>
+                </div>
+            </div>
+            <div class="section-grid three-col">
+                 <div class="chart-wrapper fade-up delay-1">
+                    <h3>Kurulu Güç Dağılımı (Ekim 2025)</h3>
+                    <canvas id="chart-doughnut-3"></canvas>
+                </div>
+                <div class="chart-wrapper fade-up delay-2">
+                    <h3>Rüzgar & Güneş Büyüme Trendi</h3>
+                    <canvas id="chart-line-4"></canvas>
+                </div>
+                <div class="section-media zoom-in delay-3">
+                    <img src="assets/turkey_wind.png" alt="Türkiye Rüzgar Türbinleri" class="object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- BÖLÜM 4 -->
+        <section id="section-4" class="section glass-card section-observer">
+            <div class="section-grid">
+                <div class="section-content slide-in-left">
+                    <h2>Yenilenebilir Enerjinin Gizli Ekolojik Maliyetleri</h2>
+                    <p>Yenilenebilir enerji sistemleri operasyonel süreçte neredeyse sıfır emisyon üretirken, üretim ve imha aşamalarında ciddi ekolojik baskılar oluşturabilir. Güneş panellerinde kullanılan silisyum ve nadir toprak elementlerinin madenciliği habitat tahribatına yol açabilir.</p>
+                    <p>Rüzgar türbinleri kanat gürültüsü ve gölge titreşimi nedeniyle kuş ve yarasa popülasyonlarını olumsuz etkileyebilir. Büyük ölçekli hidroelektrik barajlar ise ekosistem parçalanmasına ve su altında kalan alanların biyoçeşitlilik kaybına neden olmaktadır. Bu bulgular, yenilenebilir teknolojilerin CO₂ emisyonlarını önemli ölçüde azaltırken ekolojik ayak izlerinin bütüncül sürdürülebilirlik stratejileri gerektirdiğini ortaya koymaktadır.</p>
+                    <div class="chart-wrapper wide-chart">
+                        <canvas id="chart-hbar-5"></canvas>
+                    </div>
+                    <p class="footnote">*Rüzgar türbinleri arasındaki arazi tarımsal amaçla kullanılabilir.</p>
+                </div>
+                <div class="section-media zoom-in delay-2">
+                     <img src="assets/mining_impact.png" alt="Madencilik Alanı ve Etkisi">
+                </div>
+            </div>
+        </section>
+
+        <!-- BÖLÜM 5 -->
+        <section id="section-5" class="section highlight-section section-observer scale-up">
+            <div class="section-container">
+                <h2 class="center-title text-accent">Sonuç & Öneriler</h2>
+                <p>Yenilenebilir enerji sistemleri, fosil yakıtlarla kıyaslandığında çok daha küçük bir ekolojik ayak izi bırakmaktadır. Ancak "yenilenebilir = tamamen temiz" denklemi, yaşam döngüsü perspektifinden bakıldığında tam anlamıyla doğru değildir.</p>
+                <p>IEA verilerine göre 2024 yılında küresel ölçekte yenilenebilir kaynaklar elektrik üretiminin neredeyse %50'sini karşılamış; rüzgar ve güneş ise ilk kez %28 pay ile kömür ve gazın toplam payını geçmiştir. Bu tablo, yenilenebilir enerjinin hem iklim hem de ekolojik açıdan kritik önemini kanıtlamaktadır. Bununla birlikte, gerçek anlamda sürdürülebilir bir enerji geçişi için üretim zincirinin tamamının — hammaddeden geri dönüşüme kadar — ekolojik etkisinin minimize edilmesi gerekmektedir.</p>
+            </div>
+        </section>
+
+        <!-- REFERENCES -->
+        <section class="section references section-observer fade-up">
+            <h3>Kaynaklar</h3>
+            <ul>
+                <li>Ember - "Türkiye Elektrik Görünümü 2026" Raporu</li>
+                <li>Uluslararası Enerji Ajansı (IEA) 2024 Elektrik Üretimi Verileri</li>
+                <li>Avrupa Çevre Ajansı (EEA) - Enerji Yaşam Döngüsü Analizleri</li>
+                <li>Türkiye Cumhuriyeti Enerji ve Tabii Kaynaklar Bakanlığı 2025 Ekim Verileri</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Yenilenebilir Enerji Sistemlerinin Ekolojik Ayak İzi<br>
+        Efecan Efe | Beykent Üniversitesi | Ekoloji Dersi Projesi</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
